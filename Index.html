@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta importante</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    img {
+      max-width: 500px; /* tamaño máximo */
+      height: auto;     /* mantiene proporción */
+      display: block;
+      margin: 0 auto 30px auto; /* centrado y espacio abajo */
+      border-radius: 10px; /* esquinas redondeadas opcional */
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 20px;
+      cursor: pointer;
+    }
+    #no {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <!-- Aquí va tu imagen -->
+  <img src="miimagen.jpg" alt="Imagen romántica">
+
+  <h1>¿Lo intentamos otra vez?</h1>
+  <button id="si">Sí 💖</button>
+  <button id="no">No 😅</button>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const siBtn = document.getElementById("si");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    siBtn.addEventListener("click", () => {
+      alert("¡Sabía que dirías que sí! 💕");
+    });
+  </script>
+</body>
+</html>
